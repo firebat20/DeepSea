@@ -1,38 +1,6 @@
 {
-    "releaseVersion": "4.14.0-pre",
+    "releaseVersion": "1.9.4-atmo",
     "packages": [
-        {
-            "name": "minimal",
-            "active": true,
-            "modules": [
-                "atmosphere",
-                "hekate",
-                "deepseaassets",
-                "hbappstore"
-            ]
-        },
-        {
-            "name": "normal",
-            "active": true,
-            "modules": [
-                "atmosphere",
-                "hekate",
-                "deepseaassets",
-                "hbappstore",
-                "deepseatoolbox",
-                "aioupdater",
-                "edizon",
-                "edizon-ovl",
-                "emuiibo",
-                "jksv",
-                "goldleaf",
-                "sysftpd",
-                "nxovlloader",
-                "ovlsysmodules",
-                "teslamenu",
-                "deepseacpr"
-            ]
-        },
         {
             "name": "advanced",
             "active": true,
@@ -73,12 +41,6 @@
                     "name": "extract",
                     "arguments": [
                         ".*atmosphere.*\\.zip"
-                    ]
-                },
-                {
-                    "name": "delete",
-                    "arguments": [
-                        "switch/reboot_to_payload.nro"
                     ]
                 },
                 {
