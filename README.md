@@ -53,15 +53,15 @@ Send the Hekate payload to your Switch in RCM mode and launch the CFW
 | [JKSV](https://github.com/J-D-K/JKSV) | ✅ | ✅ |  |
 | [ldn_mitm](https://github.com/spacemeowx2/ldn_mitm) | ✅ |  |  |
 | [MissionControl](https://github.com/ndeadly/MissionControl) | ✅ |  |  |
-| [nx-ovlloader](https://github.com/WerWolv/nx-ovlloader) | ✅ | ✅ |  |
+| [nx-ovlloader](https://github.com/ppkantorski/nx-ovlloader) | ✅ | ✅ |  |
 | [NX-Shell](https://github.com/joel16/NX-Shell) | ✅ |  |  |
-| [ovlSysmodules](https://github.com/WerWolv/ovl-sysmodules) | ✅ | ✅ |  |
+| [ovlSysmodules](https://github.com/ppkantorski/ovl-sysmodules) | ✅ | ✅ |  |
 | [Status Monitor Overlay](https://github.com/masagrator/Status-Monitor-Overlay) | ✅ |  |
-| [sys-clk](https://github.com/retronx-team/sys-clk) | ✅ |  |
-| [sys-con](https://github.com/cathery/sys-con) | ✅ |  |  |
+| [sys-clk](https://github.com/ppkantorski/sys-clk) | ✅ |  |
+| [sys-con](https://github.com/o0Zz/sys-con) | ✅ |  |  |
 | [sys-ftpd](https://github.com/cathery/sys-ftpd) | ✅ | ✅ |  |
 | [TegraExplorer](https://github.com/joel16/NX-Shell) | ✅ |  |  |
-| [Tesla-Menu](https://github.com/WerWolv/Tesla-Menu) | ✅ | ✅ |  |
+| [Tesla-Menu](https://github.com/ppkantorski/Ultrahand-Overlay) | ✅ | ✅ |  |
 | [Goldleaf](https://github.com/XorTroll/Goldleaf) | ✅ | ✅ |  |
 
 

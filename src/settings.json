@@ -1,6 +1,5 @@
 {
-    "releaseVersion": "1.9.5-atmo-10-19-25",
-    "releaseVersion": "4.14.0",
+    "releaseVersion": "1.10.0-atmo-11-16-25",
     "packages": [
         {
             "name": "advanced",
@@ -27,7 +26,7 @@
                 "deepseacpr",
                 "tegraexplorer",
                 "nxshell",
-		        "missioncontrol"
+                "missioncontrol"
             ]
         }
     ],
@@ -75,19 +74,29 @@
             "steps": [
                 {
                     "name": "extract",
-                    "arguments": [".*hekate.*\\.zip"]
+                    "arguments": [
+                        ".*hekate.*\\.zip"
+                    ]
                 },
                 {
                     "name": "copy",
-                    "arguments": ["bootloader/hekate_*", "bootloader/update.bin"]
+                    "arguments": [
+                        "bootloader/hekate_*",
+                        "bootloader/update.bin"
+                    ]
                 },
                 {
                     "name": "createDir",
-                    "arguments": ["atmosphere"]
+                    "arguments": [
+                        "atmosphere"
+                    ]
                 },
                 {
                     "name": "copy",
-                    "arguments": ["bootloader/hekate_*", "atmosphere/reboot_payload.bin"]
+                    "arguments": [
+                        "bootloader/hekate_*",
+                        "atmosphere/reboot_payload.bin"
+                    ]
                 }
             ]
         },
@@ -107,7 +116,9 @@
         },
         "hbappstore": {
             "repo": "fortheusers/hb-appstore",
-            "regex": [".*switch-extracttosd.*\\.zip"],
+            "regex": [
+                ".*switch-extracttosd.*\\.zip"
+            ],
             "steps": [
                 {
                     "name": "extract",
@@ -119,175 +130,259 @@
         },
         "deepseatoolbox": {
             "repo": "Team-Neptune/DeepSea-Toolbox",
-            "regex": [".*\\.nro"],
+            "regex": [
+                ".*\\.nro"
+            ],
             "steps": [
                 {
                     "name": "create_dir",
-                    "arguments": ["switch/DeepSea-Toolbox"]
+                    "arguments": [
+                        "switch/DeepSea-Toolbox"
+                    ]
                 },
                 {
                     "name": "move",
-                    "arguments": ["DeepSeaToolbox.nro", "switch/DeepSea-Toolbox/DeepSeaToolbox.nro"]
+                    "arguments": [
+                        "DeepSeaToolbox.nro",
+                        "switch/DeepSea-Toolbox/DeepSeaToolbox.nro"
+                    ]
                 }
             ]
         },
         "deepseacleaner": {
             "repo": "Team-Neptune/DeepSea-Cleaner",
-            "regex": [".*DeepSea-Cleaner.*\\.zip"],
+            "regex": [
+                ".*DeepSea-Cleaner.*\\.zip"
+            ],
             "steps": [
                 {
                     "name": "extract",
-                    "arguments": [".*DeepSea-Cleaner.*\\.zip"]
+                    "arguments": [
+                        ".*DeepSea-Cleaner.*\\.zip"
+                    ]
                 }
             ]
         },
         "aioupdater": {
             "repo": "HamletDuFromage/aio-switch-updater",
-            "regex": [".*aio-switch-updater.*\\.zip"],
+            "regex": [
+                ".*aio-switch-updater.*\\.zip"
+            ],
             "steps": [
                 {
                     "name": "extract",
-                    "arguments": [".*aio-switch-updater.*\\.zip"]
+                    "arguments": [
+                        ".*aio-switch-updater.*\\.zip"
+                    ]
                 }
             ]
         },
         "edizon": {
             "repo": "tomvita/EdiZon-SE",
-            "regex": [".*EdiZon.*\\.zip"],
+            "regex": [
+                ".*EdiZon.*\\.zip"
+            ],
             "steps": [
                 {
                     "name": "extract",
-                    "arguments": [".*EdiZon.*\\.zip"]
+                    "arguments": [
+                        ".*EdiZon.*\\.zip"
+                    ]
                 },
                 {
                     "name": "delete",
-                    "arguments": ["switch/breeze"]
+                    "arguments": [
+                        "switch/breeze"
+                    ]
                 }
             ]
         },
         "edizon-ovl": {
             "repo": "proferabg/EdiZon-Overlay",
-            "regex": [".*EdiZon-Overlay.*\\.zip"],
+            "regex": [
+                ".*EdiZon-Overlay.*\\.zip"
+            ],
             "steps": [
                 {
                     "name": "extract",
-                    "arguments": [".*EdiZon-Overlay.*\\.zip"]
+                    "arguments": [
+                        ".*EdiZon-Overlay.*\\.zip"
+                    ]
                 }
             ]
         },
         "emuiibo": {
             "repo": "XorTroll/emuiibo",
-            "regex": [".*emuiibo.*\\.zip"],
+            "regex": [
+                ".*emuiibo.*\\.zip"
+            ],
             "steps": [
                 {
                     "name": "extract",
-                    "arguments": [".*emuiibo.*\\.zip"]
+                    "arguments": [
+                        ".*emuiibo.*\\.zip"
+                    ]
                 },
                 {
                     "name": "delete",
-                    "arguments": ["SdOut/atmosphere/contents/0100000000000352/flags/boot2.flag"]
+                    "arguments": [
+                        "SdOut/atmosphere/contents/0100000000000352/flags/boot2.flag"
+                    ]
                 },
                 {
                     "name": "move",
-                    "arguments": ["SdOut/atmosphere", "atmosphere"]
+                    "arguments": [
+                        "SdOut/atmosphere",
+                        "atmosphere"
+                    ]
                 },
                 {
                     "name": "move",
-                    "arguments": ["SdOut/emuiibo", "emuiibo"]
+                    "arguments": [
+                        "SdOut/emuiibo",
+                        "emuiibo"
+                    ]
                 },
                 {
                     "name": "move",
-                    "arguments": ["SdOut/switch", "switch"]
+                    "arguments": [
+                        "SdOut/switch",
+                        "switch"
+                    ]
                 },
                 {
                     "name": "delete",
-                    "arguments": ["SdOut"]
+                    "arguments": [
+                        "SdOut"
+                    ]
                 }
             ]
         },
         "jksv": {
             "repo": "J-D-K/JKSV",
-            "regex": [".*\\.nro"],
+            "regex": [
+                ".*\\.nro"
+            ],
             "steps": [
                 {
                     "name": "create_dir",
-                    "arguments": ["switch/jksv"]
+                    "arguments": [
+                        "switch/jksv"
+                    ]
                 },
                 {
                     "name": "move",
-                    "arguments": ["JKSV.nro", "switch/jksv"]
+                    "arguments": [
+                        "JKSV.nro",
+                        "switch/jksv"
+                    ]
                 }
             ]
         },
         "goldleaf": {
             "repo": "XorTroll/Goldleaf",
-            "regex": ["Goldleaf.nro"],
+            "regex": [
+                "Goldleaf.nro"
+            ],
             "steps": [
                 {
                     "name": "create_dir",
-                    "arguments": ["switch/Goldleaf"]
+                    "arguments": [
+                        "switch/Goldleaf"
+                    ]
                 },
                 {
                     "name": "move",
-                    "arguments": ["Goldleaf.nro", "switch/Goldleaf/Goldleaf.nro"]
+                    "arguments": [
+                        "Goldleaf.nro",
+                        "switch/Goldleaf/Goldleaf.nro"
+                    ]
                 }
             ]
         },
         "sysclk": {
-            "repo": "retronx-team/sys-clk",
-            "regex": [".*sys-clk.*\\.zip"],
+            "repo": "ppkantorski/sys-clk",
+            "regex": [
+                ".*sys-clk.*\\.zip"
+            ],
             "steps": [
                 {
                     "name": "extract",
-                    "arguments": [".*sys-clk.*\\.zip"]
+                    "arguments": [
+                        ".*sys-clk.*\\.zip"
+                    ]
                 },
                 {
                     "name": "create_dir",
-                    "arguments": ["switch/sys-clk-manager"]
+                    "arguments": [
+                        "switch/sys-clk-manager"
+                    ]
                 },
                 {
                     "name": "move",
-                    "arguments": ["switch/sys-clk-manager.nro", "switch/sys-clk-manager/sys-clk-manager.nro"]
+                    "arguments": [
+                        "switch/sys-clk-manager.nro",
+                        "switch/sys-clk-manager/sys-clk-manager.nro"
+                    ]
                 },
                 {
                     "name": "delete",
-                    "arguments": ["README.md"]
+                    "arguments": [
+                        "README.md"
+                    ]
                 },
                 {
                     "name": "delete",
-                    "arguments": ["atmosphere/contents/00FF0000636C6BFF/flags/boot2.flag"]
+                    "arguments": [
+                        "atmosphere/contents/00FF0000636C6BFF/flags/boot2.flag"
+                    ]
                 },
                 {
                     "name": "create_file",
-                    "arguments": ["atmosphere/contents/00FF0000636C6BFF/toolbox.json", "{\"name\": \"sys-clk\",\"tid\": \"00FF0000636C6BFF\",\"requires_reboot\": true}"]
+                    "arguments": [
+                        "atmosphere/contents/00FF0000636C6BFF/toolbox.json",
+                        "{\"name\": \"sys-clk\",\"tid\": \"00FF0000636C6BFF\",\"requires_reboot\": true}"
+                    ]
                 }
             ]
         },
         "syscon": {
-            "repo": "cathery/sys-con",
-            "regex": [".*sys-con.*\\.zip"],
+            "repo": "o0Zz/sys-con",
+            "regex": [
+                ".*sys-con.*\\.zip"
+            ],
             "steps": [
                 {
                     "name": "extract",
-                    "arguments": [".*sys-con.*\\.zip"]
+                    "arguments": [
+                        ".*sys-con.*\\.zip"
+                    ]
                 },
                 {
                     "name": "delete",
-                    "arguments": ["atmosphere/contents/690000000000000D/flags/boot2.flag"]
+                    "arguments": [
+                        "atmosphere/contents/690000000000000D/flags/boot2.flag"
+                    ]
                 }
             ]
         },
         "sysftpd": {
             "repo": "cathery/sys-ftpd",
-            "regex": [".*sys-ftpd.*\\.zip"],
+            "regex": [
+                ".*sys-ftpd.*\\.zip"
+            ],
             "steps": [
                 {
                     "name": "extract",
-                    "arguments": [".*sys-ftpd.*\\.zip"]
+                    "arguments": [
+                        ".*sys-ftpd.*\\.zip"
+                    ]
                 },
                 {
                     "name": "delete",
-                    "arguments": ["atmosphere/contents/420000000000000E/flags/boot2.flag"]
+                    "arguments": [
+                        "atmosphere/contents/420000000000000E/flags/boot2.flag"
+                    ]
                 },
                 {
                     "name": "replace_content",
@@ -309,119 +404,175 @@
         },
         "ldn_mitm": {
             "repo": "spacemeowx2/ldn_mitm",
-            "regex": [".*ldn_mitm.*\\.zip"],
+            "regex": [
+                ".*ldn_mitm.*\\.zip"
+            ],
             "steps": [
                 {
                     "name": "extract",
-                    "arguments": [".*ldn_mitm.*\\.zip"]
+                    "arguments": [
+                        ".*ldn_mitm.*\\.zip"
+                    ]
                 },
                 {
                     "name": "delete",
-                    "arguments": ["atmosphere/contents/4200000000000010/flags/boot2.flag"]
+                    "arguments": [
+                        "atmosphere/contents/4200000000000010/flags/boot2.flag"
+                    ]
                 },
                 {
                     "name": "create_file",
-                    "arguments": ["atmosphere/contents/4200000000000010/toolbox.json", "{\"name\": \"ldn_mitm\",\"tid\": \"4200000000000010\",\"requires_reboot\": true}"]
+                    "arguments": [
+                        "atmosphere/contents/4200000000000010/toolbox.json",
+                        "{\"name\": \"ldn_mitm\",\"tid\": \"4200000000000010\",\"requires_reboot\": true}"
+                    ]
                 }
             ]
         },
         "nxovlloader": {
-            "repo": "WerWolv/nx-ovlloader",
-            "regex": [".*nx-ovlloader.*\\.zip"],
+            "repo": "ppkantorski/nx-ovlloader",
+            "regex": [
+                ".*nx-ovlloader.*\\.zip"
+            ],
             "steps": [
                 {
                     "name": "extract",
-                    "arguments": [".*nx-ovlloader.*\\.zip"]
+                    "arguments": [
+                        ".*nx-ovlloader.*\\.zip"
+                    ]
                 }
             ]
         },
         "ovlsysmodules": {
-            "repo": "WerWolv/ovl-sysmodules",
-            "regex": [".*ovlSysmodules.*\\.ovl"],
+            "repo": "ppkantorski/ovl-sysmodules",
+            "regex": [
+                ".*ovlSysmodules.*\\.ovl"
+            ],
             "steps": [
                 {
                     "name": "create_dir",
-                    "arguments": ["switch/.overlays"]
+                    "arguments": [
+                        "switch/.overlays"
+                    ]
                 },
                 {
                     "name": "move",
-                    "arguments": ["ovlSysmodules.ovl", "switch/.overlays/ovlSysmodules.ovl"]
+                    "arguments": [
+                        "ovlSysmodules.ovl",
+                        "switch/.overlays/ovlSysmodules.ovl"
+                    ]
                 }
             ]
         },
         "teslamenu": {
-            "repo": "hax4dazy/Tesla-Menu",
-            "regex": [".*ovlmenu.*\\.zip"],
+            "repo": "ppkantorski/Ultrahand-Overlay",
+            "regex": [
+                ".*ovlmenu.*\\.ovl"
+            ],
             "steps": [
                 {
-                    "name": "extract",
-                    "arguments": [".*ovlmenu.*\\.zip"]
+                    "name": "move",
+                    "arguments": [
+                        "ovlmenu.ovl",
+                        "switch/ovlmenu.ovl"
+                    ]
                 }
             ]
         },
         "statusmonitoroverlay": {
             "repo": "masagrator/Status-Monitor-Overlay",
-            "regex": [".*Status-Monitor-Overlay.*\\.zip"],
+            "regex": [
+                ".*Status-Monitor-Overlay.*\\.zip"
+            ],
             "steps": [
                 {
                     "name": "extract",
-                    "arguments": [".*Status-Monitor-Overlay.*\\.zip"]
+                    "arguments": [
+                        ".*Status-Monitor-Overlay.*\\.zip"
+                    ]
                 }
             ]
         },
         "deepseacpr": {
             "repo": "Team-Neptune/CommonProblemResolver",
-            "regex": [".*\\.bin"],
+            "regex": [
+                ".*\\.bin"
+            ],
             "steps": [
                 {
                     "name": "create_dir",
-                    "arguments": ["bootloader/payloads"]
+                    "arguments": [
+                        "bootloader/payloads"
+                    ]
                 },
                 {
                     "name": "move",
-                    "arguments": ["CommonProblemResolver.bin", "bootloader/payloads/CommonProblemResolver.bin"]
+                    "arguments": [
+                        "CommonProblemResolver.bin",
+                        "bootloader/payloads/CommonProblemResolver.bin"
+                    ]
                 }
             ]
         },
         "tegraexplorer": {
             "repo": "suchmememanyskill/TegraExplorer",
-            "regex": [".*\\.bin"],
+            "regex": [
+                ".*\\.bin"
+            ],
             "steps": [
                 {
                     "name": "create_dir",
-                    "arguments": ["bootloader/payloads"]
+                    "arguments": [
+                        "bootloader/payloads"
+                    ]
                 },
                 {
                     "name": "move",
-                    "arguments": ["TegraExplorer.bin", "bootloader/payloads/TegraExplorer.bin"]
+                    "arguments": [
+                        "TegraExplorer.bin",
+                        "bootloader/payloads/TegraExplorer.bin"
+                    ]
                 }
             ]
         },
         "nxshell": {
             "repo": "joel16/NX-Shell",
-            "regex": [".*NX-Shell.*\\.nro"],
+            "regex": [
+                ".*NX-Shell.*\\.nro"
+            ],
             "steps": [
                 {
                     "name": "create_dir",
-                    "arguments": ["switch/NX-Shell"]
+                    "arguments": [
+                        "switch/NX-Shell"
+                    ]
                 },
                 {
                     "name": "move",
-                    "arguments": ["NX-Shell.nro", "switch/NX-Shell/NX-Shell.nro"]
+                    "arguments": [
+                        "NX-Shell.nro",
+                        "switch/NX-Shell/NX-Shell.nro"
+                    ]
                 }
             ]
         },
         "missioncontrol": {
             "repo": "ndeadly/MissionControl",
-            "regex": [".*MissionControl.*\\.zip"],
+            "regex": [
+                ".*MissionControl.*\\.zip"
+            ],
             "steps": [
                 {
                     "name": "extract",
-                    "arguments": [".*MissionControl.*\\.zip"]
+                    "arguments": [
+                        ".*MissionControl.*\\.zip"
+                    ]
                 },
                 {
                     "name": "delete",
-                    "arguments": ["atmosphere/contents/010000000000bd00/flags/boot2.flag"]
+                    "arguments": [
+                        "atmosphere/contents/010000000000bd00/flags/boot2.flag"
+                    ]
                 }
             ]
         }
