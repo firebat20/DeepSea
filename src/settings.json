@@ -301,7 +301,7 @@
             ]
         },
         "sysclk": {
-            "repo": "ppkantorski/sys-clk",
+            "repo": "retronx-team/sys-clk",
             "regex": [
                 ".*sys-clk.*\\.zip"
             ],

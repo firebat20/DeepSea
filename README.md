@@ -57,7 +57,7 @@ Send the Hekate payload to your Switch in RCM mode and launch the CFW
 | [NX-Shell](https://github.com/joel16/NX-Shell) | ✅ |  |  |
 | [ovlSysmodules](https://github.com/ppkantorski/ovl-sysmodules) | ✅ | ✅ |  |
 | [Status Monitor Overlay](https://github.com/masagrator/Status-Monitor-Overlay) | ✅ |  |
-| [sys-clk](https://github.com/ppkantorski/sys-clk) | ✅ |  |
+| [sys-clk](https://github.com/retronx-team/sys-clk) | ✅ |  |
 | [sys-con](https://github.com/o0Zz/sys-con) | ✅ |  |  |
 | [sys-ftpd](https://github.com/cathery/sys-ftpd) | ✅ | ✅ |  |
 | [TegraExplorer](https://github.com/joel16/NX-Shell) | ✅ |  |  |
