@@ -1,5 +1,5 @@
 {
-    "releaseVersion": "1.10.0-atmo-11-16-25",
+    "releaseVersion": "1.10.0-atmo-11-23-25",
     "packages": [
         {
             "name": "advanced",
@@ -26,6 +26,9 @@
                 "deepseacpr",
                 "tegraexplorer",
                 "nxshell",
+                "awoo",
+                "nxdumptool",
+                "checkpoint",
                 "missioncontrol"
             ]
         }
@@ -558,6 +561,62 @@
                     "arguments": [
                         "NX-Shell.nro",
                         "switch/NX-Shell/NX-Shell.nro"
+                    ]
+                }
+            ]
+        },
+        "awoo": {
+            "repo": "Huntereb/Awoo-Installer",
+            "regex": [
+                ".*Awoo-Installer.*\\zip"
+            ],
+            "steps": [
+                {
+                    "name": "extract",
+                    "arguments": [
+                        ".*Awoo-Installer.*\\zip"
+                    ]
+                }
+            ]
+        },
+        "checkpoint": {
+            "repo": "BernardoGiordano/Checkpoint",
+            "regex": [
+                ".*Checkpoint.*\\.nro"
+            ],
+            "steps": [
+                {
+                    "name": "create_dir",
+                    "arguments": [
+                        "switch/Checkpoint"
+                    ]
+                },
+                {
+                    "name": "move",
+                    "arguments": [
+                        "Checkpoint.nro",
+                        "switch/Checkpoint/Checkpoint.nro"
+                    ]
+                }
+            ]
+        },
+        "nxdumptool": {
+            "repo": "DarkMatterCore/nxdumptool",
+            "regex": [
+                ".*nxdt_rw_poc.*\\.nro"
+            ],
+            "steps": [
+                {
+                    "name": "create_dir",
+                    "arguments": [
+                        "switch/nxdumptool"
+                    ]
+                },
+                {
+                    "name": "move",
+                    "arguments": [
+                        "nxdt_rw_poc.nro",
+                        "switch/nxdumptool/nxdt_rw_poc.nro"
                     ]
                 }
             ]
