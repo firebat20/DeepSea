@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+permissions:
+  contents: write
+
 defaults:
   run:
     working-directory: src
@@ -21,14 +24,12 @@ jobs:
         version=$(python -c 'import sys, json; f=open("./settings.json");print(json.loads(f.read())["releaseVersion"])')
         echo "version=$version" >> $GITHUB_OUTPUT
 
-    - name: Set up hub
-      run: |
-        sudo apt install hub -y
-
     - name: Set up Python
       uses: actions/setup-python@v6
       with:
         python-version: '3.x'
+        cache: 'pip'
+        cache-dependency-path: requirements.txt
 
     - name: Install dependencies
       run: |
@@ -41,12 +42,11 @@ jobs:
         python ./start.py -gt="$GITHUB_TOKEN"
 
     - name: Create Release
-      run: |
-        set -x
-        assets=()
-        for asset in ./*.zip; do
-          assets+=("-a" "$asset")
-        done
-        hub release create "${assets[@]}" -d -m "Release v${{ steps.set-version.outputs.version }}" "v${{ steps.set-version.outputs.version }}"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        assets=()
+        for asset in ./*.zip; do
+          assets+=("$asset")
+        done
+        gh release create "v${{ steps.set-version.outputs.version }}" "${assets[@]}" -d -m "Release v${{ steps.set-version.outputs.version }}"
