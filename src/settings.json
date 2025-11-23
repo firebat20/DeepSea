@@ -568,13 +568,13 @@
         "awoo": {
             "repo": "Huntereb/Awoo-Installer",
             "regex": [
-                ".*Awoo-Installer.*\\zip"
+                ".*awoo-installer.*\\zip"
             ],
             "steps": [
                 {
                     "name": "extract",
                     "arguments": [
-                        ".*Awoo-Installer.*\\zip"
+                        ".*awoo-installer.*\\zip"
                     ]
                 }
             ]
