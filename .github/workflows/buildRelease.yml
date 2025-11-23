@@ -49,4 +49,4 @@ jobs:
         for asset in ./*.zip; do
           assets+=("$asset")
         done
-        gh release create "v${{ steps.set-version.outputs.version }}" "${assets[@]}" -d -m "Release v${{ steps.set-version.outputs.version }}"
+        gh release create "v${{ steps.set-version.outputs.version }}" "${assets[@]}" -d -t "Release v${{ steps.set-version.outputs.version }}" -n "Release v${{ steps.set-version.outputs.version }}"
