@@ -471,10 +471,16 @@
             ],
             "steps": [
                 {
+                    "name": "create_dir",
+                    "arguments": [
+                        "switch/.overlays"
+                    ]
+                },
+                {
                     "name": "move",
                     "arguments": [
                         "ovlmenu.ovl",
-                        "switch/ovlmenu.ovl"
+                        "switch/.overlays/ovlmenu.ovl"
                     ]
                 }
             ]
