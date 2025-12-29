@@ -183,13 +183,13 @@
         "edizon": {
             "repo": "tomvita/EdiZon-SE",
             "regex": [
-                ".*EdiZon.*\\.zip"
+                ".*edizon.*\\.zip"
             ],
             "steps": [
                 {
                     "name": "extract",
                     "arguments": [
-                        ".*EdiZon.*\\.zip"
+                        ".*edizon.*\\.zip"
                     ]
                 },
                 {
