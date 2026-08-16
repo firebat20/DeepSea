@@ -16,7 +16,10 @@ class FS():
     def createModuleEnv(self, module):
         shutil.rmtree("./menv", ignore_errors=True)
         Path("./menv").mkdir(parents=True, exist_ok=True)
-        shutil.copytree(f"./base/{module['repo']}", f"./menv/", dirs_exist_ok=True)
+        repo_path = f"./base/{module['repo']}"
+        if not os.path.isdir(repo_path):
+            raise FileNotFoundError(f"Module repo directory not found: {repo_path}")
+        shutil.copytree(repo_path, f"./menv/", dirs_exist_ok=True)
 
     def finishModule(self):
         self.__copyToSD()
@@ -25,25 +28,21 @@ class FS():
     def executeStep(self, module, step):
         if step["name"] == "extract":
             self.__extract(step["arguments"][0])
-        
-        if step["name"] == "create_dir":
+        elif step["name"] == "create_dir":
             self.__createDir(step["arguments"][0])
-
-        if step["name"] == "create_file":
+        elif step["name"] == "create_file":
             self.__createFile(step["arguments"][0], step["arguments"][1])
-
-        if step["name"] == "replace_content":
+        elif step["name"] == "replace_content":
             self.__replaceFileContent(step["arguments"][0], step["arguments"][1], step["arguments"][2])
-
-        if step["name"] == "delete":
+        elif step["name"] == "delete":
             self.__delete(step["arguments"][0])
-
-        if step["name"] == "copy":
+        elif step["name"] == "copy":
             self.__copy(step["arguments"][0], step["arguments"][1])
-
-        if step["name"] == "move":
+        elif step["name"] == "move":
             self.__copy(step["arguments"][0], step["arguments"][1])
             self.__delete(step["arguments"][0])
+        else:
+            logging.warning(f"Unknown step name: {step['name']}")
         
 
 
@@ -64,7 +63,11 @@ class FS():
             shutil.rmtree(f"./menv/{source}", ignore_errors=True)
     
     def __copy(self, source, dest):
-        for elements in glob.glob(f"./menv/{source}"):
+        matches = glob.glob(f"./menv/{source}")
+        if not matches:
+            logging.warning(f"Copy source matched no files: {source}")
+            return
+        for elements in matches:
             if not os.path.isdir(elements):
                 if os.path.exists(elements):
                     shutil.copy(f"{elements}", f"./menv/{dest}")
@@ -81,13 +84,12 @@ class FS():
             f.write(content)
     
     def __replaceFileContent(self, source, search, replace):
-        fin = open(f"./menv/{source}", "rt")
-        data = fin.read()
+        filepath = f"./menv/{source}"
+        with open(filepath, "rt") as f:
+            data = f.read()
         data = data.replace(search, replace)
-        fin.close()
-        fin = open(f"./menv/{source}", "wt")
-        fin.write(data)
-        fin.close()
+        with open(filepath, "wt") as f:
+            f.write(data)
 
     def __copyToSD(self):
         shutil.copytree("./menv", "./sd/", dirs_exist_ok=True)

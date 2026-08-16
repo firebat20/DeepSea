@@ -1,5 +1,5 @@
 {
-    "releaseVersion": "1.11.1-atmo-05-07-26",
+    "releaseVersion": "1.11.2-atmo-06-19-26",
     "packages": [
         {
             "name": "advanced",
@@ -29,7 +29,9 @@
                 "awoo",
                 "nxdumptool",
                 "checkpoint",
-                "missioncontrol"
+                "missioncontrol",
+                "deepseacleaner",
+                "ldn_mitm"
             ]
         }
     ],
@@ -285,7 +287,7 @@
         "goldleaf": {
             "repo": "XorTroll/Goldleaf",
             "regex": [
-                "Goldleaf.nro"
+                "Goldleaf\\.nro"
             ],
             "steps": [
                 {
