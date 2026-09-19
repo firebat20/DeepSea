@@ -10,15 +10,17 @@ from github import Github
 from github import GithubException
 
 try:
-    from github.Auth import Auth
+    from github import Auth
+    _has_auth_token = hasattr(Auth, "Token")
 except ImportError:  # PyGithub < 2.0 fallback
     Auth = None
+    _has_auth_token = False
 
 
 class GH:
     def __init__(self, ghToken: str):
         self.token = ghToken
-        if Auth is not None:
+        if _has_auth_token:
             self.github = Github(auth=Auth.Token(self.token))
         else:
             self.github = Github(self.token)
