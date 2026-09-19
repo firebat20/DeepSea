@@ -17,15 +17,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v7
+    - uses: actions/checkout@v4
 
     - id: set-version
       run: |
-        version=$(python -c 'import sys, json; f=open("./settings.json");print(json.loads(f.read())["releaseVersion"])')
+        version=$(python -c 'import json; print(json.load(open("./settings.json", encoding="utf-8"))["releaseVersion"])')
         echo "version=$version" >> $GITHUB_OUTPUT
 
     - name: Set up Python
-      uses: actions/setup-python@v7
+      uses: actions/setup-python@v5
       with:
         python-version: '3.x'
         cache: 'pip'
@@ -47,6 +47,10 @@ jobs:
       run: |
         assets=()
         for asset in ./*.zip; do
-          assets+=("$asset")
+          [ -f "$asset" ] && assets+=("$asset")
         done
+        if [ ${#assets[@]} -eq 0 ]; then
+          echo "No zip assets found to release!"
+          exit 1
+        fi
         gh release create "v${{ steps.set-version.outputs.version }}" "${assets[@]}" -d -t "Release v${{ steps.set-version.outputs.version }}" -n "Release v${{ steps.set-version.outputs.version }}"

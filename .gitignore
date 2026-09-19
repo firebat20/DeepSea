@@ -1,4 +1,5 @@
 src/base/*
+src/menv/*
 src/tmp/*
 src/sd/*
 src/*.zip

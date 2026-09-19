@@ -136,7 +136,7 @@
         "deepseatoolbox": {
             "repo": "Team-Neptune/DeepSea-Toolbox",
             "regex": [
-                ".*\\.nro"
+                "^DeepSeaToolbox\\.nro$"
             ],
             "steps": [
                 {
@@ -266,7 +266,7 @@
         "jksv": {
             "repo": "J-D-K/JKSV",
             "regex": [
-                ".*\\.nro"
+                "^JKSV\\.nro$"
             ],
             "steps": [
                 {
@@ -279,7 +279,7 @@
                     "name": "move",
                     "arguments": [
                         "JKSV.nro",
-                        "switch/jksv"
+                        "switch/jksv/JKSV.nro"
                     ]
                 }
             ]
@@ -287,7 +287,7 @@
         "goldleaf": {
             "repo": "XorTroll/Goldleaf",
             "regex": [
-                "Goldleaf\\.nro"
+                "^Goldleaf\\.nro$"
             ],
             "steps": [
                 {
@@ -507,7 +507,7 @@
         "deepseacpr": {
             "repo": "Team-Neptune/CommonProblemResolver",
             "regex": [
-                ".*\\.bin"
+                "^CommonProblemResolver\\.bin$"
             ],
             "steps": [
                 {
@@ -528,7 +528,7 @@
         "tegraexplorer": {
             "repo": "suchmememanyskill/TegraExplorer",
             "regex": [
-                ".*\\.bin"
+                "^TegraExplorer\\.bin$"
             ],
             "steps": [
                 {
@@ -549,7 +549,7 @@
         "nxshell": {
             "repo": "joel16/NX-Shell",
             "regex": [
-                ".*NX-Shell.*\\.nro"
+                ".*NX-Shell.*\\.nro$"
             ],
             "steps": [
                 {
@@ -584,7 +584,7 @@
         "checkpoint": {
             "repo": "BernardoGiordano/Checkpoint",
             "regex": [
-                ".*Checkpoint.*\\.nro"
+                ".*Checkpoint.*\\.nro$"
             ],
             "steps": [
                 {
@@ -604,8 +604,9 @@
         },
         "nxdumptool": {
             "repo": "DarkMatterCore/nxdumptool",
+            "releaseTag": "rewrite-prerelease",
             "regex": [
-                ".*nxdt_rw_poc.*\\.nro"
+                "^nxdt_rw_poc\\.nro$"
             ],
             "steps": [
                 {
